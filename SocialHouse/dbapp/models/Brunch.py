@@ -23,3 +23,6 @@ class Brunch(models.Model):
         max_length=4096,
         verbose_name='Описание'
     )
+
+    def __str__(self):
+        return '{}. {}'.format(self.id, self.name)
