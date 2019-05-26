@@ -20,7 +20,7 @@ class Message(models.Model):
         verbose_name='Статья'
     )
 
-    text = models.CharField(
+    text = models.TextField(
         max_length=1024,
         verbose_name='Текст'
     )

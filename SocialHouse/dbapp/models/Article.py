@@ -26,7 +26,7 @@ class Article(models.Model):
         verbose_name='Название'
     )
 
-    text = models.CharField(
+    text = models.TextField(
         max_length=32768,
         verbose_name='Текст'
     )

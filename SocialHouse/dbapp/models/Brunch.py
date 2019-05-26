@@ -19,7 +19,7 @@ class Brunch(models.Model):
         verbose_name='Название'
     )
 
-    description = models.CharField(
+    description = models.TextField(
         max_length=4096,
         verbose_name='Описание'
     )
