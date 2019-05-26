@@ -17,12 +17,17 @@ class Message(models.Model):
     article = models.ForeignKey(
         Article,
         on_delete=models.CASCADE,
-        verbose_name='Статья'
+        verbose_name='Статья',
+        related_name='messages'
     )
 
     text = models.TextField(
         max_length=1024,
         verbose_name='Текст'
+    )
+
+    posted = models.DateTimeField(
+        verbose_name='Дата публикации'
     )
 
     def __str__(self):

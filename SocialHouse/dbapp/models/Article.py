@@ -31,5 +31,12 @@ class Article(models.Model):
         verbose_name='Текст'
     )
 
+    posted = models.DateTimeField(
+        verbose_name='Дата публикации'
+    )
+
+    def messages_count(self):
+        return self.messages.count()
+
     def __str__(self):
         return '{}. {}'.format(self.id, self.name)
