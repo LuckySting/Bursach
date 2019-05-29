@@ -1,3 +1,4 @@
+from django.utils.datetime_safe import datetime
 from rest_framework import generics
 from ..serializers.ArticleSerializer import ArticleSerializer
 from ..serializers.ArticleSerializer import ArticleDetailSerializer
@@ -16,3 +17,11 @@ class ArticleListView(generics.ListAPIView):
 class ArticleViewSet(generics.RetrieveDestroyAPIView):
     serializer_class = ArticleDetailSerializer
     queryset = Article.objects.all()
+
+
+class ArticleCreateView(generics.CreateAPIView):
+    serializer_class = ArticleDetailSerializer
+    queryset = Article.objects.all()
+
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user, posted=datetime.now())

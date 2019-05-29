@@ -14,5 +14,6 @@ urlpatterns = [
     path('thread/<int:thread__pk>/brunch/list', BrunchListView.as_view(), name='brunch_list'),
     path('brunch/<int:brunch__pk>/article/list', ArticleListView.as_view(), name='article_list'),
     path('article/<int:pk>', ArticleViewSet.as_view(), name='article_rd'),
+    path('article', ArticleCreateView.as_view(), name='article_c'),
     path('docs/', include_docs_urls(title='API v1 docs', permission_classes=(AllowAny,)))
 ]
