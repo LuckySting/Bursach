@@ -9,11 +9,6 @@ class ThreadAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Brunch)
-class BrunchAdmin(admin.ModelAdmin):
-    pass
-
-
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
     pass

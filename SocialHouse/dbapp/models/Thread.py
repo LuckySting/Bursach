@@ -15,5 +15,18 @@ class Thread(models.Model):
         verbose_name='Активный'
     )
 
+    description = models.CharField(
+        max_length=1024,
+        verbose_name='Описание',
+        default=''
+    )
+
+    image = models.FileField(
+        verbose_name="Фото",
+        null=True,
+        blank=True,
+        default=None
+    )
+
     def __str__(self):
         return '{}. {}'.format(self.id, self.name)

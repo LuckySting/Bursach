@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-from dbapp.models.Brunch import Brunch
+from dbapp.models.Thread import Thread
 
 
 class Article(models.Model):
@@ -15,10 +15,10 @@ class Article(models.Model):
         verbose_name='Автор'
     )
 
-    brunch = models.ForeignKey(
-        Brunch,
+    thread = models.ForeignKey(
+        Thread,
         on_delete=models.CASCADE,
-        verbose_name='Ветка'
+        verbose_name='Тред'
     )
 
     name = models.CharField(

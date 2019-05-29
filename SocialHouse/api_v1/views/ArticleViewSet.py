@@ -7,11 +7,11 @@ from dbapp.models import Article
 
 class ArticleListView(generics.ListAPIView):
     serializer_class = ArticleSerializer
-    lookup_url_kwarg = 'brunch__pk'
+    lookup_url_kwarg = 'thread__id'
 
     def get_queryset(self):
-        brunch__id = self.kwargs.get(self.lookup_url_kwarg)
-        return Article.objects.filter(brunch__id=brunch__id)
+        thread__id = self.kwargs.get(self.lookup_url_kwarg)
+        return Article.objects.filter(thread__id=thread__id)
 
 
 class ArticleViewSet(generics.RetrieveDestroyAPIView):
