@@ -3,6 +3,7 @@ from rest_framework_simplejwt import views as jwt_views
 from .TokenSettings import *
 from .views.ThreadViewSet import *
 from .views.ArticleViewSet import *
+from .views.MessagesViewSet import *
 from rest_framework.documentation import include_docs_urls
 from rest_framework.permissions import AllowAny
 
@@ -12,6 +13,7 @@ urlpatterns = [
     path('thread/list', ThreadListView.as_view(), name='thread_list'),
     path('thread/<int:thread__id>/article/list', ArticleListView.as_view(), name='article_list'),
     path('article/<int:pk>', ArticleViewSet.as_view(), name='article_rd'),
+    path('article/<int:article__id>/message/list', MessageListView.as_view(), name='article_messages_list'),
     path('article', ArticleCreateView.as_view(), name='article_c'),
     path('docs/', include_docs_urls(title='API v1 docs', permission_classes=(AllowAny,)))
 ]
