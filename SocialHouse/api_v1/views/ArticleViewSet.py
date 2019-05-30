@@ -8,6 +8,7 @@ from dbapp.models import Article
 class ArticleListView(generics.ListAPIView):
     serializer_class = ArticleSerializer
     lookup_url_kwarg = 'thread__id'
+    pagination_class = None
 
     def get_queryset(self):
         thread__id = self.kwargs.get(self.lookup_url_kwarg)
